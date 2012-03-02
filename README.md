@@ -4,9 +4,9 @@ Emagister Banners Bundle
 Welcome to Banners Bundle, a small [@EmagisterTech](https://twitter.com/#!/EmagisterTech) project
 that acts as a Symfony2 Tutorial inside our Friday Training Sessions
 
-You can read [Symfony2 README file here](README-SF2.md)
+You can read [Symfony2 README file here](https://github.com/Emagister/Symfony2-Tutorial/blob/master/README-SF2.md)
 
-The project is about the creation of a Banner Server, most like what [@OpenX](http://www.openx.com) and
+The project is about the creation of a Banner Server, most like what [OpenX](http://www.openx.com) and
 other similar tools do, but with Symfony2.
 
 There are branches for each training day, so you can join us at any point of the series.
