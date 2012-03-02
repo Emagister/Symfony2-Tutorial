@@ -1,0 +1,47 @@
+<h1>Campaign list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Active_at</th>
+            <th>Expire_at</th>
+            <th>Created_at</th>
+            <th>Updated_at</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('campaign_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.name }}</td>
+            <td>{{ entity.description }}</td>
+            <td>{% if entity.activeat %}{{ entity.activeat|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>{% if entity.expireat %}{{ entity.expireat|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>{% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>{% if entity.updatedat %}{{ entity.updatedat|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('campaign_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('campaign_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('campaign_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

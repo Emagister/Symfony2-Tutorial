@@ -1,0 +1,13 @@
+.buildpath 
+.project 
+.settings
+nbproject 
+.idea
+/web/bundles/*
+/web/css/*
+/web/js/*
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/vendor/
+/app/config/parameters.ini
