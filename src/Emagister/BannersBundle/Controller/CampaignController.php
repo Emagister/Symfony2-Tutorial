@@ -26,7 +26,7 @@ class CampaignController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('EmagisterBannersBundle:Campaign')->findAll();
+        $entities = $em->getRepository('EmagisterBannersBundle:Campaign')->getCampaignsWithAdvertisers();
 
         return array('entities' => $entities);
     }

@@ -5,6 +5,8 @@ namespace Emagister\BannersBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Emagister\BannersBundle\Entity\Advertiser
  *
@@ -13,6 +15,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Advertiser
 {
+    const A30DIAS = 10;
+    const A60DIAS = 20;
+    const TRANSFER = 30;
+
     /**
      * @var integer $id
      *
@@ -26,20 +32,21 @@ class Advertiser
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\Regex(pattern="/^[a-z0-9]+$/", message="Name solo puede tener letras y números sin espacios")
      */
     private $name;
 
     /**
      * @var text $description
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var integer $billing
      *
-     * @ORM\Column(name="billing", type="integer")
+     * @ORM\Column(name="billing", type="integer", nullable=true)
      */
     private $billing;
 
@@ -60,7 +67,7 @@ class Advertiser
     /**
      * @var boolean $active
      *
-     * @ORM\Column(name="active", type="boolean")
+     * @ORM\Column(name="active", type="boolean", nullable=true)
      */
     private $active;
 
@@ -215,4 +222,40 @@ class Advertiser
     {
         return $this->campaigns;
     }
+
+    /**
+     * Gets Payment Options
+     * @static
+     * @return array
+     */
+    public static function getPaymentOptions()
+    {
+        return array(
+            self::A30DIAS  => 'A 30 días',
+            self::A60DIAS  => 'A 60 días',
+            self::TRANSFER => 'Transferencia',
+        );
+    }
+
+    /**
+     * @return bool
+     * @Assert\True(message="Name y description deben ser diferentes")
+     */
+    public function isNameDifferentThanDesc()
+    {
+        return ($this->getName() != $this->getDescription());
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
+
+
+
+
+

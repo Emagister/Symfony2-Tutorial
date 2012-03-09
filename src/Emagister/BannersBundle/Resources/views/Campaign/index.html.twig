@@ -1,3 +1,11 @@
+{% extends 'EmagisterBannersBundle::layout.html.twig' %}
+
+{% block title %}
+{{ parent() }} - Campaign List
+{% endblock %}
+
+{% block page %}
+
 <h1>Campaign list</h1>
 
 <table class="records_list">
@@ -6,6 +14,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Advertiser</th>
             <th>Active_at</th>
             <th>Expire_at</th>
             <th>Created_at</th>
@@ -19,6 +28,7 @@
             <td><a href="{{ path('campaign_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.name }}</td>
             <td>{{ entity.description }}</td>
+            <td>{{ entity.advertiser }}</td>
             <td>{% if entity.activeat %}{{ entity.activeat|date('Y-m-d H:i:s') }}{% endif%}</td>
             <td>{% if entity.expireat %}{{ entity.expireat|date('Y-m-d H:i:s') }}{% endif%}</td>
             <td>{% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif%}</td>
@@ -45,3 +55,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

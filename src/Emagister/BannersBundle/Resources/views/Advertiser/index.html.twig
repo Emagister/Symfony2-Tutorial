@@ -1,3 +1,10 @@
+{% extends 'EmagisterBannersBundle::layout.html.twig' %}
+
+{% block title %}
+   {{ parent() }} - Advertiser List
+{% endblock %}
+
+{% block page %}
 <h1>Advertiser list</h1>
 
 <table class="records_list">
@@ -45,3 +52,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

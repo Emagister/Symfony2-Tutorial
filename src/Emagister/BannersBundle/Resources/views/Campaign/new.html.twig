@@ -1,3 +1,11 @@
+{% extends 'EmagisterBannersBundle::layout.html.twig' %}
+
+{% block title %}
+{{ parent() }} - Campaign create
+{% endblock %}
+
+{% block page %}
+
 <h1>Campaign creation</h1>
 
 <form action="{{ path('campaign_create') }}" method="post" {{ form_enctype(form) }}>
@@ -14,3 +22,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}

@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class CampaignRepository extends EntityRepository
 {
+    /**
+     * @return array
+     */
+    public function getCampaignsWithAdvertisers()
+    {
+        $em = $this->getEntityManager();
+
+        return $em->createQuery('SELECT c, a FROM EmagisterBannersBundle:Campaign c INNER JOIN c.advertiser a')
+                  ->getResult();
+    }
 }
