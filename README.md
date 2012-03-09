@@ -20,3 +20,8 @@ Sessions Summary
 
 In this first day we learned how to install Symfony2 from scratch, and a small review on what we get when we download Symfony2 standard edition with vendors.
 We also started using CLI tools to create a Bundle skeleton, and 2 entities with a OneToMany relationship.
+
+[**Day2**](https://github.com/Emagister/Symfony2-Tutorial/tree/master/src/Emagister/BannersBundle/Resources/doc/Day2.md)
+
+In this second day we created CRUD for our entities and made a common layout for all views generated.
+We introduced Twig as a template system, customized generated forms, enhanced entities, introduced Symfony2 validators and created querys in a Repository to optimize performance.
