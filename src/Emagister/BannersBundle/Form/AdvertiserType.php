@@ -17,8 +17,6 @@ class AdvertiserType extends AbstractType
             ->add('billing', 'choice', array(
                                         'choices' => Advertiser::getPaymentOptions(),
                                         ))
-            ->add('created_at')
-            ->add('updated_at')
             ->add('active')
         ;
     }

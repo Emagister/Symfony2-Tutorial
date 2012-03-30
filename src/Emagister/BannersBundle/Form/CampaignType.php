@@ -14,8 +14,6 @@ class CampaignType extends AbstractType
             ->add('description')
             ->add('active_at')
             ->add('expire_at')
-            ->add('created_at')
-            ->add('updated_at')
             ->add('advertiser')
         ;
     }

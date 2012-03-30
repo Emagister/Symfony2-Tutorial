@@ -4,6 +4,7 @@ namespace Emagister\BannersBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -54,6 +55,7 @@ class Advertiser
      * @var datetime $created_at
      *
      * @ORM\Column(name="created_at", type="datetime")
+     * @Gedmo\Timestampable(on="create")
      */
     private $created_at;
 
@@ -61,6 +63,7 @@ class Advertiser
      * @var datetime $updated_at
      *
      * @ORM\Column(name="updated_at", type="datetime")
+     * @Gedmo\Timestampable(on="update")
      */
     private $updated_at;
 
