@@ -25,3 +25,9 @@ We also started using CLI tools to create a Bundle skeleton, and 2 entities with
 
 In this second day we created CRUD for our entities and made a common layout for all views generated.
 We introduced Twig as a template system, customized generated forms, enhanced entities, introduced Symfony2 validators and created querys in a Repository to optimize performance.
+
+[**Day3**](https://github.com/Emagister/Symfony2-Tutorial/tree/master/src/Emagister/BannersBundle/Resources/doc/Day3.md)
+
+In our third day, we started expanding our Symfony2 project with DoctrineExtensionsBundle, DoctrineMigrationsBundle and DoctrineExtensionsBundle.
+We used those bundles, and upgraded our Crud to use Timestampable Extension
+At the end, we presented Symfony2 commands and learnt about how to colour the output.
